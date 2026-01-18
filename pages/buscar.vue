@@ -97,8 +97,8 @@ const sortedCategories = computed(() => {
               <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 <NuxtLink
                   v-for="result in groupedResults[category]"
-                  :key="result._path"
-                  :to="result._path"
+                  :key="result.path"
+                  :to="result.path"
                   class="card p-6 group"
                 >
                   <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">

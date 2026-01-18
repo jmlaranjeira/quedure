@@ -1,6 +1,7 @@
 <script setup lang="ts">
 interface Article {
-  _path: string
+  path: string
+  _path?: string // fallback for compatibility
   title: string
   description: string
   brand?: string
@@ -27,8 +28,8 @@ withDefaults(defineProps<Props>(), {
     <div v-if="articles && articles.length > 0" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       <NuxtLink
         v-for="article in articles"
-        :key="article._path"
-        :to="article._path"
+        :key="article.path || article._path"
+        :to="article.path || article._path"
         class="card p-6 group"
       >
         <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors line-clamp-2">

@@ -10,7 +10,7 @@ const { data: article } = await useAsyncData(`aprender-article-${route.path}`, (
 const { data: subcategoryArticles } = await useAsyncData(`aprender-list-${route.path}`, async () => {
   if (article.value) return null
   const all = await queryCollection('aprender').order('updatedAt', 'DESC').all()
-  return all.filter((a: any) => a._path?.startsWith(route.path + '/'))
+  return all.filter((a: any) => a.path?.startsWith(route.path + '/'))
 })
 
 // Get subcategory name from path

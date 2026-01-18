@@ -10,7 +10,7 @@ const { data: article } = await useAsyncData(`electronica-article-${route.path}`
 const { data: subcategoryArticles } = await useAsyncData(`electronica-list-${route.path}`, async () => {
   if (article.value) return null
   const all = await queryCollection('electronica').order('updatedAt', 'DESC').all()
-  return all.filter((a: any) => a._path?.startsWith(route.path + '/'))
+  return all.filter((a: any) => a.path?.startsWith(route.path + '/'))
 })
 
 // Get subcategory name from path

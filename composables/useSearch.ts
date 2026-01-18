@@ -1,5 +1,5 @@
 export interface SearchResult {
-  _path: string
+  path: string
   title: string
   description: string
   category: string
@@ -45,7 +45,7 @@ export const useSearch = () => {
         })
 
         allResults.push(...filtered.map((item: any) => ({
-          _path: item._path,
+          path: item.path,
           title: item.title,
           description: item.description,
           category: collection,
