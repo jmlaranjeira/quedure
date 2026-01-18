@@ -33,23 +33,9 @@ const features = [
             tutoriales de reparación y recursos para un consumo más consciente.
           </p>
 
-          <!-- Search placeholder -->
+          <!-- Search -->
           <div class="mt-8 max-w-xl">
-            <div class="relative">
-              <input
-                type="text"
-                placeholder="Buscar productos, marcas o guías..."
-                class="w-full px-5 py-4 pr-12 rounded-xl text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-primary-300"
-              />
-              <button
-                type="button"
-                class="absolute right-3 top-1/2 -translate-y-1/2 p-2 text-gray-500 hover:text-primary-600"
-              >
-                <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                </svg>
-              </button>
-            </div>
+            <SearchBox />
           </div>
 
           <div class="mt-8 flex flex-wrap gap-4">
