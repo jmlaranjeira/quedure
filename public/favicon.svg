@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64"><svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Salmón ultra-minimalista para favicon/app icon -->
+  
+  <!-- Cuerpo - una sola forma fluida -->
+  <path d="M32 4
+       C20 10, 16 22, 18 32
+       C16 42, 20 54, 32 58
+       C44 54, 48 42, 46 32
+       C48 22, 44 10, 32 4Z" fill="#F97316"></path>
+  
+  <!-- Cola -->
+  <path d="M32 58
+       Q24 60, 20 68
+       Q28 62, 32 60
+       Q36 62, 44 68
+       Q40 60, 32 58Z" fill="#F97316"></path>
+  
+  <!-- Ojo - punto simple -->
+  <circle cx="32" cy="18" r="4" fill="white"></circle>
+  <circle cx="32" cy="18" r="2" fill="#1F2937"></circle>
+  
+</svg></svg><style>@media (prefers-color-scheme: light) { :root { filter: none; } }
+@media (prefers-color-scheme: dark) { :root { filter: none; } }
+</style></svg>
