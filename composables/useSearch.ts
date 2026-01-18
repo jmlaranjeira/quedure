@@ -9,6 +9,15 @@ export interface SearchResult {
   difficulty?: string
 }
 
+// Simple debounce implementation
+function debounce<T extends (...args: any[]) => any>(fn: T, delay: number) {
+  let timeoutId: ReturnType<typeof setTimeout> | null = null
+  return (...args: Parameters<T>) => {
+    if (timeoutId) clearTimeout(timeoutId)
+    timeoutId = setTimeout(() => fn(...args), delay)
+  }
+}
+
 export const useSearch = () => {
   const searchQuery = ref('')
   const results = ref<SearchResult[]>([])
@@ -56,7 +65,7 @@ export const useSearch = () => {
     }
   }
 
-  const debouncedSearch = useDebounceFn(search, 300)
+  const debouncedSearch = debounce(search, 300)
 
   watch(searchQuery, (newQuery) => {
     debouncedSearch(newQuery)
