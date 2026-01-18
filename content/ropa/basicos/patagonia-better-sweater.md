@@ -6,6 +6,8 @@ subcategory: basicos
 brand: Patagonia
 price: "129€"
 rating: 5
+reparabilidad: 9
+reparabilidadSource: "QueDure"
 pros:
   - "Garantía de por vida (Ironclad Guarantee)"
   - "Programa Worn Wear de reparación gratuita"

@@ -6,6 +6,8 @@ subcategory: bicicletas
 brand: Brompton
 price: "Desde 1.100€"
 rating: 5
+reparabilidad: 9
+reparabilidadSource: "QueDure"
 pros:
   - "Repuestos disponibles de por vida"
   - "Fabricación artesanal en Londres"

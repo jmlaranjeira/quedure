@@ -6,6 +6,8 @@ subcategory: calzado
 brand: Red Wing
 price: "339€"
 rating: 5
+reparabilidad: 9
+reparabilidadSource: "QueDure"
 pros:
   - "Construcción Goodyear Welt (resuelable)"
   - "Piel curtida de alta calidad"

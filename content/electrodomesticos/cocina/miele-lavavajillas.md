@@ -6,6 +6,8 @@ subcategory: cocina
 brand: Miele
 price: "Desde 1.299€"
 rating: 5
+reparabilidad: 7
+reparabilidadSource: "QueDure"
 pros:
   - "Diseñado para 20 años de uso (10.000 ciclos)"
   - "Repuestos disponibles durante 15 años"

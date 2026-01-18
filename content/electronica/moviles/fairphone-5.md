@@ -6,6 +6,8 @@ subcategory: moviles
 brand: Fairphone
 price: "699€"
 rating: 4
+reparabilidad: 10
+reparabilidadSource: "iFixit"
 pros:
   - "Batería extraíble y reemplazable por el usuario"
   - "8 años de actualizaciones de software garantizadas"

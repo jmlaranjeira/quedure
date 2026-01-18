@@ -6,6 +6,8 @@ subcategory: ordenadores
 brand: Framework
 price: "Desde 1.399€"
 rating: 5
+reparabilidad: 10
+reparabilidadSource: "iFixit"
 pros:
   - "Totalmente modular: CPU, GPU, RAM, SSD actualizables"
   - "Sistema de expansión único con bahías intercambiables"

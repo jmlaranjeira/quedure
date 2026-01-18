@@ -6,6 +6,8 @@ subcategory: patinetes
 brand: Segway-Ninebot
 price: "699€"
 rating: 4
+reparabilidad: 8
+reparabilidadSource: "QueDure"
 pros:
   - "Batería de alta capacidad (551 Wh)"
   - "Autonomía real de 50-65 km"

@@ -6,6 +6,8 @@ subcategory: lavado
 brand: Speed Queen
 price: "Desde 1.600€"
 rating: 5
+reparabilidad: 8
+reparabilidadSource: "QueDure"
 pros:
   - "Construcción comercial/industrial"
   - "Garantía de 5-7 años según modelo"

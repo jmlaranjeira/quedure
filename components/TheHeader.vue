@@ -20,7 +20,13 @@ const toggleMenu = () => {
     <nav class="container-wide">
       <div class="flex items-center justify-between h-16">
         <!-- Logo -->
-        <NuxtLink to="/" class="flex items-center space-x-2">
+        <NuxtLink to="/" class="flex items-center gap-2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" class="h-8 w-8">
+            <path d="M32 4 C20 10, 16 22, 18 32 C16 42, 20 54, 32 58 C44 54, 48 42, 46 32 C48 22, 44 10, 32 4Z" fill="#F97316"/>
+            <path d="M32 58 Q24 60, 20 68 Q28 62, 32 60 Q36 62, 44 68 Q40 60, 32 58Z" fill="#F97316"/>
+            <circle cx="32" cy="18" r="4" fill="white"/>
+            <circle cx="32" cy="18" r="2" fill="#1F2937"/>
+          </svg>
           <span class="text-2xl font-bold text-primary-600">QueDure</span>
         </NuxtLink>
 

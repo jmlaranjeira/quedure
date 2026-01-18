@@ -8,6 +8,8 @@ interface Props {
     brand?: string
     price?: string
     rating?: number
+    reparabilidad?: number
+    reparabilidadSource?: string
     pros?: string[]
     cons?: string[]
     difficulty?: string
@@ -77,19 +79,23 @@ const contentColorClass = computed(() => {
         <h1 class="text-3xl lg:text-4xl font-bold mb-4">{{ article.title }}</h1>
         <p :class="['text-lg max-w-2xl', contentColorClass]">{{ article.description }}</p>
 
+        <!-- Reparability Score (prominente) -->
+        <div v-if="article.reparabilidad" class="mt-6 bg-white/10 backdrop-blur-sm rounded-lg p-4 inline-block">
+          <div class="text-xs text-white/70 mb-2">Puntuación de reparabilidad</div>
+          <ReparabilityScore
+            :score="article.reparabilidad"
+            :source="article.reparabilidadSource"
+            on-dark
+          />
+        </div>
+
         <!-- Meta info -->
-        <div class="mt-6 flex flex-wrap gap-3 text-sm">
+        <div class="mt-4 flex flex-wrap gap-3 text-sm">
           <span v-if="article.brand" class="bg-white/10 px-3 py-1 rounded-full">
             {{ article.brand }}
           </span>
           <span v-if="article.price" class="bg-white/10 px-3 py-1 rounded-full">
             {{ article.price }}
-          </span>
-          <span v-if="article.rating" class="bg-white/10 px-3 py-1 rounded-full flex items-center gap-1">
-            <svg class="w-4 h-4 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-            {{ article.rating }}/5
           </span>
           <span v-if="article.difficulty" class="bg-white/10 px-3 py-1 rounded-full">
             Dificultad: {{ article.difficulty }}
