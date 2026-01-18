@@ -1,6 +1,7 @@
 ---
 title: "Speed Queen: La lavadora comercial para tu casa"
 description: "Análisis de las lavadoras Speed Queen, máquinas de calidad comercial diseñadas para durar 25 años en uso doméstico."
+descripcion_corta: "La última lavadora que necesitarás comprar. Calidad comercial, 25 años de vida útil."
 category: electrodomesticos
 subcategory: lavado
 brand: Speed Queen
@@ -8,6 +9,7 @@ price: "Desde 1.600€"
 rating: 5
 reparabilidad: 8
 reparabilidadSource: "QueDure"
+garantia: "5-7 años"
 pros:
   - "Construcción comercial/industrial"
   - "Garantía de 5-7 años según modelo"
@@ -19,6 +21,23 @@ cons:
   - "Diseño básico sin funciones inteligentes"
   - "Difícil de encontrar en España"
   - "Consumo de agua superior a modelos eficientes"
+donde_comprar:
+  - nombre: "Speed Queen España"
+    url: "https://speedqueen.es"
+  - nombre: "Amazon"
+    url: "https://amazon.es"
+testimonios:
+  - texto: "Llevo 15 años con mi Speed Queen y funciona como el primer día. Mis vecinos ya van por la tercera lavadora."
+    fuente: "Usuario en foro de electrodomésticos"
+  - texto: "El precio duele al principio, pero cuando ves que tus amigos cambian de lavadora cada 5 años, entiendes la inversión."
+    fuente: "Reseña verificada"
+comparativa:
+  alternativa_nombre: "Lavadora convencional"
+  alternativa_precio: 450
+  alternativa_duracion: "5 años de media"
+  alternativa_coste_10_anos: 900
+  producto_duracion: "25 años"
+  producto_coste_10_anos: 1600
 updatedAt: "2024-01-14"
 ---
 

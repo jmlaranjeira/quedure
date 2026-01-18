@@ -73,8 +73,8 @@ watch(searchQuery, (val) => {
         <div v-if="results.length > 0" class="py-2">
           <NuxtLink
             v-for="result in results.slice(0, 6)"
-            :key="result._path"
-            :to="result._path"
+            :key="result.path"
+            :to="result.path"
             class="block px-4 py-3 hover:bg-gray-50 transition-colors"
             @click="showResults = false"
           >

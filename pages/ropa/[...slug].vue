@@ -38,8 +38,8 @@ useSeoMeta({
 </script>
 
 <template>
-  <!-- Article view -->
-  <ArticleLayout
+  <!-- Product view -->
+  <ProductLayout
     v-if="article"
     :article="article"
     category-name="Ropa"
@@ -47,7 +47,7 @@ useSeoMeta({
     color-scheme="primary"
   >
     <ContentRenderer :value="article" />
-  </ArticleLayout>
+  </ProductLayout>
 
   <!-- Subcategory listing -->
   <div v-else-if="isSubcategoryListing">
