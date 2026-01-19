@@ -1,2 +1,33 @@
+# Robots.txt for QueDure.es
+# Guía de productos duraderos y reparables
+
 User-Agent: *
-Disallow:
+Allow: /
+Disallow: /buscar
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://quedure.es/sitemap.xml
+
+# Crawl-delay for polite crawling (optional)
+# Crawl-delay: 1
+
+# Specific bot rules
+User-Agent: Googlebot
+Allow: /
+
+User-Agent: Bingbot
+Allow: /
+
+User-Agent: Slurp
+Allow: /
+
+# Block AI training bots (optional - uncomment if desired)
+# User-Agent: GPTBot
+# Disallow: /
+
+# User-Agent: ChatGPT-User
+# Disallow: /
+
+# User-Agent: Google-Extended
+# Disallow: /

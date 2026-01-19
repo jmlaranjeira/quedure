@@ -29,12 +29,38 @@ if (!article.value && !subcategoryArticles.value?.length) {
   throw createError({ statusCode: 404, message: 'Página no encontrada' })
 }
 
-useSeoMeta({
-  title: () => article.value
-    ? `${article.value.title} | QueDure.es`
-    : `${subcategoryName.value} - Movilidad | QueDure.es`,
-  description: () => article.value?.description || `Guías y recomendaciones de ${subcategoryName.value?.toLowerCase()} duraderos`
-})
+// SEO with JSON-LD Schema
+if (article.value) {
+  useProductSeo({
+    title: article.value.title,
+    description: article.value.description,
+    image: article.value.image,
+    brand: article.value.brand,
+    price: article.value.price,
+    rating: article.value.rating,
+    reparabilidad: article.value.reparabilidad,
+    reparabilidadSource: article.value.reparabilidadSource,
+    offers: article.value.donde_comprar,
+    modifiedTime: article.value.updatedAt
+  })
+
+  useBreadcrumbSchema([
+    { name: 'Inicio', url: '/' },
+    { name: 'Movilidad', url: '/movilidad' },
+    { name: article.value.title, url: route.path }
+  ])
+} else {
+  useSeo({
+    title: `${subcategoryName.value} - Movilidad | QueDure.es`,
+    description: `Guías y recomendaciones de ${subcategoryName.value?.toLowerCase()} duraderos`
+  })
+
+  useBreadcrumbSchema([
+    { name: 'Inicio', url: '/' },
+    { name: 'Movilidad', url: '/movilidad' },
+    { name: subcategoryName.value, url: route.path }
+  ])
+}
 </script>
 
 <template>

@@ -6,8 +6,33 @@ export default defineNuxtConfig({
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
-    '@nuxt/image'
+    '@nuxt/image',
+    '@nuxtjs/sitemap'
   ],
+
+  // Sitemap configuration
+  site: {
+    url: 'https://quedure.es',
+    name: 'QueDure.es'
+  },
+
+  sitemap: {
+    xsl: false
+  },
+
+  // Image optimization
+  image: {
+    quality: 80,
+    format: ['webp', 'jpg'],
+    screens: {
+      xs: 320,
+      sm: 640,
+      md: 768,
+      lg: 1024,
+      xl: 1280,
+      xxl: 1536
+    }
+  },
 
   app: {
     head: {
@@ -22,7 +47,24 @@ export default defineNuxtConfig({
           name: 'description',
           content: 'Descubre productos diseñados para durar. Guías de compra, reparación y consumo consciente para un estilo de vida sostenible.'
         },
-        { name: 'theme-color', content: '#0D9488' }
+        { name: 'theme-color', content: '#0D9488' },
+        // Open Graph defaults
+        { property: 'og:type', content: 'website' },
+        { property: 'og:site_name', content: 'QueDure.es' },
+        { property: 'og:locale', content: 'es_ES' },
+        { property: 'og:title', content: 'QueDure.es - Guía de productos duraderos y reparables' },
+        { property: 'og:description', content: 'Descubre productos diseñados para durar. Guías de compra, reparación y consumo consciente para un estilo de vida sostenible.' },
+        { property: 'og:image', content: 'https://quedure.es/og-image.jpg' },
+        { property: 'og:url', content: 'https://quedure.es' },
+        // Twitter Card defaults
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { name: 'twitter:site', content: '@QueDureES' },
+        { name: 'twitter:title', content: 'QueDure.es - Guía de productos duraderos y reparables' },
+        { name: 'twitter:description', content: 'Descubre productos diseñados para durar. Guías de compra, reparación y consumo consciente para un estilo de vida sostenible.' },
+        { name: 'twitter:image', content: 'https://quedure.es/og-image.jpg' },
+        // Additional SEO
+        { name: 'robots', content: 'index, follow' },
+        { name: 'author', content: 'QueDure.es' }
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },

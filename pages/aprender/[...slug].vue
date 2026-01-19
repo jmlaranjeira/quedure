@@ -29,12 +29,33 @@ if (!article.value && !subcategoryArticles.value?.length) {
   throw createError({ statusCode: 404, message: 'Página no encontrada' })
 }
 
-useSeoMeta({
-  title: () => article.value
-    ? `${article.value.title} | QueDure.es`
-    : `${subcategoryName.value} - Aprender | QueDure.es`,
-  description: () => article.value?.description || `Artículos sobre ${subcategoryName.value?.toLowerCase()} y consumo consciente`
-})
+// SEO with JSON-LD Schema
+if (article.value) {
+  useArticleSeo({
+    title: article.value.title,
+    description: article.value.description,
+    image: article.value.image,
+    category: 'Aprender',
+    modifiedTime: article.value.updatedAt
+  })
+
+  useBreadcrumbSchema([
+    { name: 'Inicio', url: '/' },
+    { name: 'Aprender', url: '/aprender' },
+    { name: article.value.title, url: route.path }
+  ])
+} else {
+  useSeo({
+    title: `${subcategoryName.value} - Aprender | QueDure.es`,
+    description: `Artículos sobre ${subcategoryName.value?.toLowerCase()} y consumo consciente`
+  })
+
+  useBreadcrumbSchema([
+    { name: 'Inicio', url: '/' },
+    { name: 'Aprender', url: '/aprender' },
+    { name: subcategoryName.value, url: route.path }
+  ])
+}
 </script>
 
 <template>

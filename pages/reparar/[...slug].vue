@@ -29,12 +29,33 @@ if (!article.value && !subcategoryArticles.value?.length) {
   throw createError({ statusCode: 404, message: 'Página no encontrada' })
 }
 
-useSeoMeta({
-  title: () => article.value
-    ? `${article.value.title} | QueDure.es`
-    : `${subcategoryName.value} - Reparar | QueDure.es`,
-  description: () => article.value?.description || `Tutoriales de ${subcategoryName.value?.toLowerCase()} para alargar la vida de tus productos`
-})
+// SEO with JSON-LD Schema
+if (article.value) {
+  useArticleSeo({
+    title: article.value.title,
+    description: article.value.description,
+    image: article.value.image,
+    category: 'Reparación',
+    modifiedTime: article.value.updatedAt
+  })
+
+  useBreadcrumbSchema([
+    { name: 'Inicio', url: '/' },
+    { name: 'Reparar', url: '/reparar' },
+    { name: article.value.title, url: route.path }
+  ])
+} else {
+  useSeo({
+    title: `${subcategoryName.value} - Reparar | QueDure.es`,
+    description: `Tutoriales de ${subcategoryName.value?.toLowerCase()} para alargar la vida de tus productos`
+  })
+
+  useBreadcrumbSchema([
+    { name: 'Inicio', url: '/' },
+    { name: 'Reparar', url: '/reparar' },
+    { name: subcategoryName.value, url: route.path }
+  ])
+}
 </script>
 
 <template>

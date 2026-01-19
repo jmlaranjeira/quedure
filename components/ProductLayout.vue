@@ -102,10 +102,15 @@ const hasMultipleStores = computed(() => {
           <!-- Imagen -->
           <div class="relative animate-scale-in">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-stone-100 to-stone-200 shadow-2xl shadow-stone-200/50">
-              <img
+              <NuxtImg
                 v-if="article.image"
                 :src="article.image"
                 :alt="article.title"
+                width="600"
+                height="750"
+                loading="lazy"
+                format="webp"
+                quality="80"
                 class="w-full h-full object-cover transition-opacity duration-700"
                 :class="imageLoaded ? 'opacity-100' : 'opacity-0'"
                 @load="imageLoaded = true"
