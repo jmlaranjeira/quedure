@@ -1,10 +1,7 @@
 ---
 name: crear-producto
-description: Guía completa para crear fichas de productos duraderos y reparables en QueDure
-triggers:
-  - /crear-producto
-  - crear ficha de producto
-  - nuevo producto
+description: Guía completa para crear fichas de productos duraderos y reparables en QueDure. Usar cuando el usuario diga "crear ficha de producto", "nuevo producto", "añadir producto" o invoque /crear-producto.
+allowed-tools: Read, Write, Grep, Glob, WebSearch, WebFetch
 ---
 
 # Skill: Crear Ficha de Producto QueDure
