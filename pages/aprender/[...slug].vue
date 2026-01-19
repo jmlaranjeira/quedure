@@ -44,24 +44,24 @@ useSeoMeta({
     :article="article"
     category-name="Aprender"
     category-path="/aprender"
-    color-scheme="accent"
+    color-scheme="primary"
   >
     <ContentRenderer :value="article" />
   </ArticleLayout>
 
   <!-- Subcategory listing -->
   <div v-else-if="isSubcategoryListing">
-    <section class="bg-gradient-to-br from-accent-600 to-accent-800 text-white py-16">
+    <section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16">
       <div class="container-wide">
         <nav class="text-sm mb-4">
-          <NuxtLink to="/" class="text-accent-200 hover:text-white">Inicio</NuxtLink>
-          <span class="mx-2 text-accent-300">/</span>
-          <NuxtLink to="/aprender" class="text-accent-200 hover:text-white">Aprender</NuxtLink>
-          <span class="mx-2 text-accent-300">/</span>
+          <NuxtLink to="/" class="text-primary-200 hover:text-white">Inicio</NuxtLink>
+          <span class="mx-2 text-primary-300">/</span>
+          <NuxtLink to="/aprender" class="text-primary-200 hover:text-white">Aprender</NuxtLink>
+          <span class="mx-2 text-primary-300">/</span>
           <span>{{ subcategoryName }}</span>
         </nav>
         <h1 class="text-4xl font-bold mb-4">{{ subcategoryName }}</h1>
-        <p class="text-xl text-accent-100 max-w-2xl">
+        <p class="text-xl text-primary-100 max-w-2xl">
           Artículos sobre {{ subcategoryName?.toLowerCase() }} y consumo consciente.
         </p>
       </div>

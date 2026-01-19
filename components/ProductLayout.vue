@@ -49,7 +49,7 @@ interface Props {
   }
   categoryName: string
   categoryPath: string
-  colorScheme?: 'primary' | 'secondary' | 'accent'
+  colorScheme?: 'primary' | 'secondary'
 }
 
 const props = withDefaults(defineProps<Props>(), {

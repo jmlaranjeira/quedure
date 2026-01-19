@@ -63,15 +63,15 @@ const steps = [
 <template>
   <div>
     <!-- Hero -->
-    <section class="bg-gradient-to-br from-accent-600 to-accent-800 text-white py-16">
+    <section class="bg-gradient-to-br from-primary-600 to-primary-800 text-white py-16">
       <div class="container-wide">
         <nav class="text-sm mb-4">
-          <NuxtLink to="/" class="text-accent-200 hover:text-white">Inicio</NuxtLink>
-          <span class="mx-2 text-accent-300">/</span>
+          <NuxtLink to="/" class="text-primary-200 hover:text-white">Inicio</NuxtLink>
+          <span class="mx-2 text-primary-300">/</span>
           <span>Aprender</span>
         </nav>
         <h1 class="text-4xl font-bold mb-4">Aprende a consumir mejor</h1>
-        <p class="text-xl text-accent-100 max-w-2xl">
+        <p class="text-xl text-primary-100 max-w-2xl">
           El conocimiento es poder. Descubre cómo tomar mejores decisiones
           de compra y reducir tu impacto en el planeta.
         </p>
@@ -111,21 +111,21 @@ const steps = [
             :to="topic.href"
             class="card p-6 group bg-white"
           >
-            <div class="w-12 h-12 bg-accent-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-accent-200 transition-colors">
-              <svg v-if="topic.icon === 'guide'" class="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors">
+              <svg v-if="topic.icon === 'guide'" class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
               </svg>
-              <svg v-else-if="topic.icon === 'warning'" class="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <svg v-else-if="topic.icon === 'warning'" class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
               </svg>
-              <svg v-else-if="topic.icon === 'circular'" class="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <svg v-else-if="topic.icon === 'circular'" class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12c0-1.232-.046-2.453-.138-3.662a4.006 4.006 0 00-3.7-3.7 48.678 48.678 0 00-7.324 0 4.006 4.006 0 00-3.7 3.7c-.017.22-.032.441-.046.662M19.5 12l3-3m-3 3l-3-3m-12 3c0 1.232.046 2.453.138 3.662a4.006 4.006 0 003.7 3.7 48.656 48.656 0 007.324 0 4.006 4.006 0 003.7-3.7c.017-.22.032-.441.046-.662M4.5 12l3 3m-3-3l-3 3" />
               </svg>
-              <svg v-else-if="topic.icon === 'badge'" class="w-6 h-6 text-accent-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+              <svg v-else-if="topic.icon === 'badge'" class="w-6 h-6 text-primary-600" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
               </svg>
             </div>
-            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-accent-600 transition-colors">
+            <h3 class="text-lg font-semibold text-gray-900 group-hover:text-primary-600 transition-colors">
               {{ topic.title }}
             </h3>
             <p class="mt-2 text-sm text-gray-600">{{ topic.description }}</p>

@@ -20,7 +20,7 @@ interface Props {
   }
   categoryName: string
   categoryPath: string
-  colorScheme?: 'primary' | 'secondary' | 'accent'
+  colorScheme?: 'primary' | 'secondary'
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -30,8 +30,7 @@ const props = withDefaults(defineProps<Props>(), {
 const gradientClass = computed(() => {
   const schemes = {
     primary: 'from-primary-600 to-primary-800',
-    secondary: 'from-secondary-500 to-secondary-700',
-    accent: 'from-accent-600 to-accent-800'
+    secondary: 'from-secondary-500 to-secondary-700'
   }
   return schemes[props.colorScheme]
 })
@@ -39,8 +38,7 @@ const gradientClass = computed(() => {
 const lightColorClass = computed(() => {
   const schemes = {
     primary: 'text-primary-200',
-    secondary: 'text-secondary-200',
-    accent: 'text-accent-200'
+    secondary: 'text-secondary-200'
   }
   return schemes[props.colorScheme]
 })
@@ -48,8 +46,7 @@ const lightColorClass = computed(() => {
 const mutedColorClass = computed(() => {
   const schemes = {
     primary: 'text-primary-300',
-    secondary: 'text-secondary-300',
-    accent: 'text-accent-300'
+    secondary: 'text-secondary-300'
   }
   return schemes[props.colorScheme]
 })
@@ -57,8 +54,7 @@ const mutedColorClass = computed(() => {
 const contentColorClass = computed(() => {
   const schemes = {
     primary: 'text-primary-100',
-    secondary: 'text-secondary-100',
-    accent: 'text-accent-100'
+    secondary: 'text-secondary-100'
   }
   return schemes[props.colorScheme]
 })
