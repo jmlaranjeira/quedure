@@ -12,7 +12,7 @@ reparabilidad: 10
 reparabilidadSource: "iFixit"
 garantia: "5 años"
 actualizaciones: "8 años Android + seguridad"
-image: "https://images.unsplash.com/photo-1598327105666-5b89351aff97?w=600&h=800&fit=crop"
+image: "https://shop.fairphone.com/web/image/3163352-88619ca1/FP6_Carousel%231_1A_1080x1080"
 pros:
   - "Diseño modular: repara tú mismo sin conocimientos técnicos"
   - "Materiales éticos: 40%+ reciclados o comercio justo"
