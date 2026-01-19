@@ -97,6 +97,18 @@ const shops = ref<RepairShop[]>([
     phone: '+34 981 345 678',
     categories: ['movilidad'],
     description: 'Especialistas en bicicletas eléctricas'
+  },
+  {
+    id: '9',
+    name: 'Repair Café - Hospital Centro Vivo',
+    address: 'Plaza de Minayo, 2',
+    city: 'Badajoz',
+    lat: 38.8794,
+    lng: -6.9707,
+    phone: '+34 924 478 687',
+    website: 'https://elhospital.dip-badajoz.es',
+    categories: ['electronica', 'electrodomesticos', 'ropa'],
+    description: 'Primer Repair Café de la provincia de Badajoz. Evento gratuito el primer sábado de cada mes, de 11:00 a 13:00h.'
   }
 ])
 

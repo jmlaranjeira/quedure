@@ -15,6 +15,7 @@ const sections = [
     title: 'Recursos',
     links: [
       { name: 'Reparar', href: '/reparar' },
+      { name: 'Talleres', href: '/reparar/talleres' },
       { name: 'Aprender', href: '/aprender' }
     ]
   }
@@ -27,7 +28,8 @@ const sections = [
       <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
         <!-- Brand -->
         <div class="md:col-span-2">
-          <NuxtLink to="/" class="text-2xl font-bold text-white">
+          <NuxtLink to="/" class="flex items-center gap-2 text-2xl font-bold text-white">
+            <img src="/favicon.svg" alt="QueDure logo" class="h-8 w-8" />
             QueDure
           </NuxtLink>
           <p class="mt-3 text-sm text-gray-400 max-w-md">
