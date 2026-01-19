@@ -56,6 +56,9 @@ const features = [
     <!-- Categories Grid -->
     <CategoryGrid />
 
+    <!-- Awareness Section -->
+    <AwarenessSection />
+
     <!-- Why QueDure Section -->
     <section class="py-16 bg-white">
       <div class="container-wide">
@@ -94,20 +97,5 @@ const features = [
       </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-16 bg-gray-100">
-      <div class="container-narrow text-center">
-        <h2 class="text-3xl font-bold text-gray-900 mb-4">
-          ¿Listo para empezar?
-        </h2>
-        <p class="text-gray-600 mb-8 max-w-xl mx-auto">
-          Descubre cómo elegir productos que duran, aprende a repararlos y únete
-          a una comunidad que valora la calidad sobre la cantidad.
-        </p>
-        <NuxtLink to="/aprender" class="btn-primary inline-block">
-          Comenzar ahora
-        </NuxtLink>
-      </div>
-    </section>
   </div>
 </template>
