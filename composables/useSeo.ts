@@ -40,8 +40,7 @@ interface BreadcrumbItem {
 
 const SITE_URL = 'https://quedure.es'
 const SITE_NAME = 'QueDure.es'
-const DEFAULT_IMAGE = `${SITE_URL}/og-image.jpg`
-const TWITTER_HANDLE = '@QueDureES'
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`
 
 /**
  * SEO base para cualquier página
@@ -71,7 +70,6 @@ export const useSeo = (config: SeoConfig) => {
     twitterDescription: config.description,
     twitterImage: imageUrl,
     twitterImageAlt: config.title,
-    twitterSite: TWITTER_HANDLE,
 
     // Article specific
     ...(config.type === 'article' && {
@@ -268,13 +266,14 @@ export const useOrganizationSchema = () => {
     url: SITE_URL,
     logo: `${SITE_URL}/favicon.svg`,
     description: 'Guía de productos duraderos y reparables para un consumo más consciente',
+    email: 'hola@quedure.es',
     sameAs: [
-      // Añadir redes sociales cuando existan
+      'https://instagram.com/quedure.es'
     ],
     contactPoint: {
       '@type': 'ContactPoint',
       contactType: 'customer service',
-      url: `${SITE_URL}/contacto`
+      email: 'hola@quedure.es'
     }
   }
 

@@ -54,14 +54,13 @@ export default defineNuxtConfig({
         { property: 'og:locale', content: 'es_ES' },
         { property: 'og:title', content: 'QueDure.es - Guía de productos duraderos y reparables' },
         { property: 'og:description', content: 'Descubre productos diseñados para durar. Guías de compra, reparación y consumo consciente para un estilo de vida sostenible.' },
-        { property: 'og:image', content: 'https://quedure.es/og-image.jpg' },
+        { property: 'og:image', content: 'https://quedure.es/og-image.png' },
         { property: 'og:url', content: 'https://quedure.es' },
         // Twitter Card defaults
         { name: 'twitter:card', content: 'summary_large_image' },
-        { name: 'twitter:site', content: '@QueDureES' },
         { name: 'twitter:title', content: 'QueDure.es - Guía de productos duraderos y reparables' },
         { name: 'twitter:description', content: 'Descubre productos diseñados para durar. Guías de compra, reparación y consumo consciente para un estilo de vida sostenible.' },
-        { name: 'twitter:image', content: 'https://quedure.es/og-image.jpg' },
+        { name: 'twitter:image', content: 'https://quedure.es/og-image.png' },
         // Additional SEO
         { name: 'robots', content: 'index, follow' },
         { name: 'author', content: 'QueDure.es' }
