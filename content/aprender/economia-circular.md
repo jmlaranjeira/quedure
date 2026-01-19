@@ -117,15 +117,6 @@ Interface, líder mundial en alfombras modulares, lanzó **"Mission Zero"** para
 
 Interface demuestra que "residuo" es solo un recurso mal ubicado.
 
-### McDonald's Europa: eliminando el plástico de un solo uso
-
-McDonald's en Europa ha implementado cambios significativos:
-
-- **Eliminación de pajitas de plástico** en toda Europa
-- **Empaques retornables** en pruebas piloto en Francia y Alemania
-- **Compromiso 2025**: 100% de empaques de fuentes recicladas, renovables o certificadas
-- **Eliminación de juguetes de plástico** en Happy Meals
-
 ## Los números: por qué es rentable
 
 La economía circular no es solo buena para el planeta. Es buen negocio.
@@ -215,7 +206,7 @@ La Organización Internacional de Normalización publicó la **ISO 59040:2025**,
 
 La economía circular no es una idea para el futuro. Es un modelo que ya funciona, genera beneficios económicos y protege el medio ambiente.
 
-Philips gana dinero vendiendo luz en lugar de bombillas. IKEA revende muebles usados. Interface fabrica alfombras con redes de pesca abandonadas. McDonald's elimina el plástico de un solo uso en Europa.
+Philips gana dinero vendiendo luz en lugar de bombillas. IKEA revende muebles usados. Interface fabrica alfombras con redes de pesca abandonadas.
 
 El modelo lineal de extraer-producir-tirar tiene fecha de caducidad. La economía circular ofrece una alternativa probada: diseñar para durar, reparar antes de tirar, y mantener los materiales en circulación.
 
