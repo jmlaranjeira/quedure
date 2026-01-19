@@ -164,6 +164,12 @@ const hasMultipleStores = computed(() => {
               <p class="font-body text-xl text-gray-600 leading-relaxed">
                 {{ article.descripcion_corta || article.description }}
               </p>
+              <div class="mt-4">
+                <ShareButton
+                  :title="article.title"
+                  :description="article.descripcion_corta || article.description"
+                />
+              </div>
             </div>
 
             <!-- Precio -->

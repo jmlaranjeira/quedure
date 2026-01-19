@@ -141,6 +141,10 @@ const gradientClass = computed(() => {
             </svg>
             {{ article.readingTime }} min lectura
           </span>
+
+          <!-- Share button -->
+          <ShareButton :title="article.title" :description="article.description" on-dark />
+
           <span v-if="article.updatedAt" class="text-white/70 text-xs">
             Actualizado: {{ article.updatedAt }}
           </span>
