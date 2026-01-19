@@ -350,5 +350,11 @@ const hasMultipleStores = computed(() => {
         Última actualización: {{ article.updatedAt }}
       </div>
     </div>
+
+    <!-- Floating share button -->
+    <FloatingShareButton
+      :title="article.title"
+      :description="article.descripcion_corta || article.description"
+    />
   </div>
 </template>

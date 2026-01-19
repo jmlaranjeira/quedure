@@ -294,5 +294,11 @@ const gradientClass = computed(() => {
         </div>
       </div>
     </article>
+
+    <!-- Floating share button -->
+    <FloatingShareButton
+      :title="article.title"
+      :description="article.description"
+    />
   </div>
 </template>
