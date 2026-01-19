@@ -42,17 +42,20 @@ Guía al usuario sobre dónde buscar información. Ofrece ayuda con WebSearch y 
 - **Ficha técnica PDF**: Datos detallados de rendimiento y características
 - **Garantía y soporte**: Duración de garantía, disponibilidad de repuestos
 
-### 2.2 Puntuación de Reparabilidad
+### 2.2 Puntuacion de Reparabilidad
 
 Buscar en este orden de prioridad:
 
-1. **iFixit** (https://www.ifixit.com): Puntuación oficial de desmontaje
-2. **Índice francés de reparabilidad**: Para productos vendidos en Francia (obligatorio por ley)
-3. **Evaluación QueDure**: Si no hay puntuación oficial, evaluar según:
-   - Disponibilidad de repuestos
-   - Facilidad de desmontaje
-   - Documentación de reparación disponible
-   - Herramientas necesarias
+1. **iFixit** (https://www.ifixit.com): Puntuacion oficial de desmontaje
+2. **Indice frances de reparabilidad**: Para productos vendidos en Francia (obligatorio por ley)
+3. **Evaluacion QueDure**: Si no hay puntuacion oficial, evaluar segun la metodologia documentada en `/aprender/indices-reparabilidad`:
+   - Disponibilidad de repuestos (25%)
+   - Facilidad de desmontaje (25%)
+   - Documentacion (20%)
+   - Herramientas necesarias (15%)
+   - Red de reparacion (15%)
+
+> **Ver metodologia completa**: [/aprender/indices-reparabilidad](/aprender/indices-reparabilidad)
 
 ### 2.3 Testimonios Reales de Usuarios
 
@@ -77,26 +80,26 @@ Buscar precios en:
 
 ## Fase 3: Cálculo de Comparativa
 
-Calcular el coste real a 10-20 años comparando con alternativas convencionales.
+Calcular el coste real a 10-20 anos comparando con alternativas convencionales.
 
 ### Fórmula para alternativa convencional:
 ```
-coste_10_años = precio × (10 / años_duración)
+coste_10_anos = precio × (10 / anos_duración)
 ```
 
-**Ejemplo**: Lavadora convencional 550€, dura 5 años
+**Ejemplo**: Lavadora convencional 550€, dura 5 anos
 ```
-coste_10_años = 550 × (10 / 5) = 1.100€
+coste_10_anos = 550 × (10 / 5) = 1.100€
 ```
 
 ### Fórmula para producto duradero:
 ```
-coste_10_años = precio + mantenimiento_estimado
+coste_10_anos = precio + mantenimiento_estimado
 ```
 
-**Ejemplo**: Miele 1.899€, dura 20 años, mantenimiento mínimo
+**Ejemplo**: Miele 1.899€, dura 20 anos, mantenimiento mínimo
 ```
-coste_10_años = 1.899€ (el producto dura más de 10 años sin reemplazo)
+coste_10_anos = 1.899€ (el producto dura más de 10 anos sin reemplazo)
 ```
 
 ---
@@ -139,7 +142,7 @@ rating: {1-5}
 reparabilidad: {1-10}
 reparabilidadSource: "{iFixit|Índice francés|QueDure}"
 garantia: "{duración garantía}"
-actualizaciones: "{años de actualizaciones/soporte}"
+actualizaciones: "{anos de actualizaciones/soporte}"
 image: "{URL de imagen del producto}"
 pros:
   - "{Ventaja 1}"
@@ -174,9 +177,9 @@ testimonios:
 comparativa:
   alternativa_nombre: "{Producto convencional genérico}"
   alternativa_precio: {precio_numero}
-  alternativa_duracion: "{X-Y años}"
+  alternativa_duracion: "{X-Y anos}"
   alternativa_coste_10_anos: {coste_numero}
-  producto_duracion: "{X+ años}"
+  producto_duracion: "{X+ anos}"
   producto_coste_10_anos: {coste_numero}
 updatedAt: "{YYYY-MM-DD}"
 ---
@@ -241,7 +244,7 @@ Antes de crear el archivo, verifica:
 ### Descripciones
 - Empezar con la marca y su historia/reputación
 - Explicar POR QUÉ el producto es duradero, no solo QUE lo es
-- Incluir datos concretos (años de garantía, ciclos probados, etc.)
+- Incluir datos concretos (anos de garantía, ciclos probados, etc.)
 
 ### Pros y Cons
 - Pros específicos y verificables, no genéricos

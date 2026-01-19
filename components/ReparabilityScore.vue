@@ -62,10 +62,14 @@ const getBarStyle = (index: number) => {
 
 <template>
   <!-- Hero variant for product detail page -->
-  <div v-if="variant === 'hero'" class="flex flex-col gap-3">
+  <NuxtLink
+    v-if="variant === 'hero'"
+    to="/aprender/indices-reparabilidad"
+    class="flex flex-col gap-3 group cursor-pointer"
+  >
     <div class="flex items-center justify-between">
-      <span class="text-sm font-medium text-gray-500 uppercase tracking-wider font-body">
-        Índice de reparabilidad
+      <span class="text-sm font-medium text-gray-500 uppercase tracking-wider font-body group-hover:text-gray-700 transition-colors">
+        Indice de reparabilidad
       </span>
       <span class="text-sm font-bold" :class="label.color">{{ label.text }}</span>
     </div>
@@ -83,19 +87,23 @@ const getBarStyle = (index: number) => {
         {{ animatedScore }}
       </span>
     </div>
-    <p class="text-xs text-gray-400 font-body">
+    <p class="text-xs text-gray-400 font-body group-hover:text-gray-500 transition-colors">
       <template v-if="source">
         Basado en criterios {{ source }}
       </template>
       <template v-else>
         Basado en criterios iFixit
       </template>
-      · Puntuación oficial verificada
+      · <span class="underline">Ver metodologia</span>
     </p>
-  </div>
+  </NuxtLink>
 
   <!-- Compact variant for cards -->
-  <div v-else-if="compact" class="flex items-center gap-2">
+  <NuxtLink
+    v-else-if="compact"
+    to="/aprender/indices-reparabilidad"
+    class="flex items-center gap-2 group cursor-pointer hover:opacity-80 transition-opacity"
+  >
     <div class="flex gap-px">
       <div
         v-for="i in 10"
@@ -108,10 +116,14 @@ const getBarStyle = (index: number) => {
     <span v-if="source" class="text-xs px-1.5 py-0.5 rounded" :class="sourceClass">
       {{ source }}
     </span>
-  </div>
+  </NuxtLink>
 
   <!-- Default variant -->
-  <div v-else class="flex items-center gap-3">
+  <NuxtLink
+    v-else
+    to="/aprender/indices-reparabilidad"
+    class="flex items-center gap-3 group cursor-pointer hover:opacity-80 transition-opacity"
+  >
     <!-- Barra de segmentos -->
     <div class="flex gap-0.5">
       <div
@@ -122,7 +134,7 @@ const getBarStyle = (index: number) => {
       />
     </div>
 
-    <!-- Score numérico -->
+    <!-- Score numerico -->
     <div class="flex items-baseline gap-1">
       <span class="text-xl font-bold" :class="textColor">{{ score }}</span>
       <span class="text-sm" :class="dividerColor">/10</span>
@@ -132,5 +144,5 @@ const getBarStyle = (index: number) => {
     <span v-if="source" class="text-xs px-2 py-0.5 rounded" :class="sourceClass">
       {{ source }}
     </span>
-  </div>
+  </NuxtLink>
 </template>
