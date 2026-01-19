@@ -1,6 +1,7 @@
 <script setup lang="ts">
 interface Testimonio {
   texto: string
+  autor?: string
   fuente: string
 }
 
@@ -9,34 +10,57 @@ interface Props {
 }
 
 defineProps<Props>()
+
+// Get first letter of author name for avatar
+const getInitial = (autor?: string, fuente?: string) => {
+  if (autor) return autor[0].toUpperCase()
+  if (fuente) return fuente[0].toUpperCase()
+  return 'U'
+}
+
+// Get display name
+const getDisplayName = (autor?: string) => {
+  return autor || 'Usuario anónimo'
+}
 </script>
 
 <template>
-  <section class="bg-gray-50 rounded-xl p-6 lg:p-8">
-    <h3 class="text-xl font-bold text-gray-900 mb-6">
-      Lo que dicen los usuarios
-    </h3>
+  <section class="py-16 bg-stone-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <h2 class="font-display text-3xl text-gray-900 text-center mb-12">
+        Quienes ya lo tienen dicen...
+      </h2>
 
-    <div class="space-y-6">
-      <blockquote
-        v-for="(testimonio, index) in testimonios"
-        :key="index"
-        class="relative pl-6 border-l-4 border-primary-300"
-      >
-        <svg
-          class="absolute -left-3 -top-2 w-6 h-6 text-primary-200"
-          fill="currentColor"
-          viewBox="0 0 24 24"
+      <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div
+          v-for="(testimonio, index) in testimonios"
+          :key="index"
+          class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 relative"
         >
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-        </svg>
-        <p class="text-gray-700 italic mb-2">
-          "{{ testimonio.texto }}"
-        </p>
-        <cite class="text-sm text-gray-500 not-italic">
-          — {{ testimonio.fuente }}
-        </cite>
-      </blockquote>
+          <!-- Comilla decorativa -->
+          <div class="absolute -top-4 left-8 text-6xl text-teal-200 font-serif leading-none">"</div>
+
+          <!-- Texto del testimonio -->
+          <blockquote class="font-body text-gray-700 text-lg leading-relaxed mb-6 relative z-10">
+            {{ testimonio.texto }}
+          </blockquote>
+
+          <!-- Footer con avatar y autor -->
+          <footer class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-teal-400 to-teal-600 rounded-full flex items-center justify-center text-white font-bold text-sm">
+              {{ getInitial(testimonio.autor, testimonio.fuente) }}
+            </div>
+            <div>
+              <div class="font-body font-medium text-gray-900">
+                {{ getDisplayName(testimonio.autor) }}
+              </div>
+              <div class="font-body text-sm text-gray-400">
+                {{ testimonio.fuente }}
+              </div>
+            </div>
+          </footer>
+        </div>
+      </div>
     </div>
   </section>
 </template>

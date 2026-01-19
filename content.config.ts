@@ -18,12 +18,16 @@ const productSchema = z.object({
   // Nuevos campos para productos
   descripcion_corta: z.string().optional(),
   garantia: z.string().optional(),
+  actualizaciones: z.string().optional(),
+  origen: z.string().optional(),
   donde_comprar: z.array(z.object({
     nombre: z.string(),
-    url: z.string()
+    url: z.string(),
+    precio: z.string().optional()
   })).optional(),
   testimonios: z.array(z.object({
     texto: z.string(),
+    autor: z.string().optional(),
     fuente: z.string()
   })).optional(),
   comparativa: z.object({

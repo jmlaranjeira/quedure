@@ -1,11 +1,15 @@
 <script setup lang="ts">
+import { ref, computed, onMounted } from 'vue'
+
 interface DondeComprar {
   nombre: string
   url: string
+  precio?: string
 }
 
 interface Testimonio {
   texto: string
+  autor?: string
   fuente: string
 }
 
@@ -26,11 +30,13 @@ interface Props {
     category?: string
     subcategory?: string
     brand?: string
+    origen?: string
     price?: string
     rating?: number
     reparabilidad?: number
     reparabilidadSource?: string
     garantia?: string
+    actualizaciones?: string
     image?: string
     pros?: string[]
     cons?: string[]
@@ -48,137 +54,179 @@ const props = withDefaults(defineProps<Props>(), {
   colorScheme: 'primary'
 })
 
-const bgColorClass = computed(() => {
-  const schemes = {
-    primary: 'bg-primary-50',
-    secondary: 'bg-secondary-50',
-    accent: 'bg-accent-50'
-  }
-  return schemes[props.colorScheme]
+const imageLoaded = ref(false)
+const showComparePrices = ref(false)
+
+onMounted(() => {
+  // Trigger animations after mount
 })
 
-const lightBgClass = computed(() => {
-  const schemes = {
-    primary: 'bg-primary-100',
-    secondary: 'bg-secondary-100',
-    accent: 'bg-accent-100'
-  }
-  return schemes[props.colorScheme]
+const scoreBadgeColor = computed(() => {
+  if (!props.article.reparabilidad) return 'bg-gray-500'
+  if (props.article.reparabilidad >= 8) return 'bg-emerald-500 shadow-emerald-500/30'
+  if (props.article.reparabilidad >= 5) return 'bg-amber-500 shadow-amber-500/30'
+  return 'bg-red-500 shadow-red-500/30'
 })
 
-const textColorClass = computed(() => {
-  const schemes = {
-    primary: 'text-primary-600',
-    secondary: 'text-secondary-600',
-    accent: 'text-accent-600'
-  }
-  return schemes[props.colorScheme]
+const primaryStore = computed(() => {
+  return props.article.donde_comprar?.[0]
 })
 
-const placeholderIconColor = computed(() => {
-  const schemes = {
-    primary: 'text-primary-300',
-    secondary: 'text-secondary-300',
-    accent: 'text-accent-300'
-  }
-  return schemes[props.colorScheme]
+const hasMultipleStores = computed(() => {
+  return (props.article.donde_comprar?.length ?? 0) > 1
 })
 </script>
 
 <template>
-  <div>
-    <!-- Breadcrumb -->
-    <section :class="['py-4', bgColorClass]">
-      <div class="container-wide">
-        <nav class="text-sm">
-          <NuxtLink to="/" :class="[textColorClass, 'hover:underline']">Inicio</NuxtLink>
-          <span class="mx-2 text-gray-400">/</span>
-          <NuxtLink :to="categoryPath" :class="[textColorClass, 'hover:underline']">{{ categoryName }}</NuxtLink>
-          <span class="mx-2 text-gray-400">/</span>
-          <span class="text-gray-600">{{ article.title }}</span>
+  <div class="min-h-screen bg-stone-50">
+    <!-- Header breadcrumb -->
+    <div class="bg-white border-b border-gray-100">
+      <div class="max-w-6xl mx-auto px-6 py-4">
+        <nav class="flex items-center gap-2 text-sm font-body text-gray-500">
+          <NuxtLink to="/" class="hover:text-teal-600 transition-colors">QueDure</NuxtLink>
+          <span class="text-gray-300">/</span>
+          <NuxtLink :to="categoryPath" class="hover:text-teal-600 transition-colors">{{ categoryName }}</NuxtLink>
+          <span class="text-gray-300">/</span>
+          <span class="text-gray-900">{{ article.title }}</span>
         </nav>
       </div>
-    </section>
+    </div>
 
-    <!-- Hero: 2 columnas -->
-    <section :class="['py-8 lg:py-12', bgColorClass]">
-      <div class="container-wide">
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12">
-          <!-- Columna izquierda: Imagen -->
-          <div class="flex items-center justify-center">
-            <div
-              v-if="article.image"
-              class="w-full max-w-md aspect-square rounded-xl overflow-hidden bg-white shadow-lg"
-            >
+    <!-- Hero Section -->
+    <section class="bg-white">
+      <div class="max-w-6xl mx-auto px-6 py-12">
+        <div class="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+
+          <!-- Imagen -->
+          <div class="relative animate-scale-in">
+            <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-stone-100 to-stone-200 shadow-2xl shadow-stone-200/50">
               <img
+                v-if="article.image"
                 :src="article.image"
                 :alt="article.title"
-                class="w-full h-full object-cover"
+                class="w-full h-full object-cover transition-opacity duration-700"
+                :class="imageLoaded ? 'opacity-100' : 'opacity-0'"
+                @load="imageLoaded = true"
               />
+              <!-- Placeholder si no hay imagen -->
+              <div v-else class="w-full h-full flex items-center justify-center">
+                <svg
+                  class="w-24 h-24 text-stone-300"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1"
+                  stroke="currentColor"
+                >
+                  <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
+                </svg>
+              </div>
             </div>
-            <!-- Placeholder si no hay imagen -->
+
+            <!-- Badge de reparabilidad flotante -->
             <div
-              v-else
-              :class="['w-full max-w-md aspect-square rounded-xl flex items-center justify-center', lightBgClass]"
+              v-if="article.reparabilidad"
+              class="absolute -bottom-4 -right-4 lg:bottom-6 lg:-right-6 text-white rounded-2xl p-4 shadow-xl animate-fade-in-up stagger-3"
+              :class="scoreBadgeColor"
             >
-              <svg
-                :class="['w-24 h-24', placeholderIconColor]"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke-width="1"
-                stroke="currentColor"
-              >
-                <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 0 0 1.5-1.5V6a1.5 1.5 0 0 0-1.5-1.5H3.75A1.5 1.5 0 0 0 2.25 6v12a1.5 1.5 0 0 0 1.5 1.5Zm10.5-11.25h.008v.008h-.008V8.25Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z" />
-              </svg>
+              <div class="text-center">
+                <div class="text-4xl font-black">{{ article.reparabilidad }}</div>
+                <div class="text-xs font-medium opacity-90">{{ article.reparabilidadSource || 'iFixit' }} Score</div>
+              </div>
+            </div>
+
+            <!-- Etiqueta marca -->
+            <div
+              v-if="article.brand"
+              class="absolute top-6 left-6 bg-white/90 backdrop-blur-sm rounded-full px-4 py-2 shadow-lg animate-fade-in-up stagger-1"
+            >
+              <span class="text-sm font-medium text-gray-700">
+                {{ article.brand }}
+                <template v-if="article.origen"> · {{ article.origen }}</template>
+              </span>
             </div>
           </div>
 
-          <!-- Columna derecha: Info -->
-          <div class="flex flex-col justify-center">
-            <h1 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-3">
-              {{ article.title }}
-            </h1>
+          <!-- Info -->
+          <div class="flex flex-col gap-8">
 
-            <p class="text-lg text-gray-600 mb-6">
-              {{ article.descripcion_corta || article.description }}
-            </p>
+            <!-- Título y descripción -->
+            <div class="animate-fade-in-up stagger-1">
+              <h1 class="font-display text-5xl lg:text-6xl text-gray-900 mb-4">
+                {{ article.title }}
+              </h1>
+              <p class="font-body text-xl text-gray-600 leading-relaxed">
+                {{ article.descripcion_corta || article.description }}
+              </p>
+            </div>
 
-            <!-- Reparability Score -->
-            <div v-if="article.reparabilidad" class="mb-6">
-              <div class="text-xs text-gray-500 mb-2 uppercase tracking-wide">Puntuación de reparabilidad</div>
+            <!-- Precio -->
+            <div v-if="article.price" class="animate-fade-in-up stagger-2">
+              <div class="flex items-baseline gap-3">
+                <span class="font-display text-4xl text-gray-900">{{ article.price }}</span>
+                <span class="text-sm text-gray-400 font-body">PVP recomendado</span>
+              </div>
+            </div>
+
+            <!-- Score de reparabilidad -->
+            <div v-if="article.reparabilidad" class="bg-stone-100 rounded-2xl p-6 animate-fade-in-up stagger-3">
               <ReparabilityScore
                 :score="article.reparabilidad"
                 :source="article.reparabilidadSource"
+                variant="hero"
               />
             </div>
 
-            <!-- Meta info -->
-            <div class="flex flex-wrap gap-3 mb-6">
-              <span v-if="article.brand" class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium text-gray-700">
-                {{ article.brand }}
-              </span>
-              <span v-if="article.price" class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium text-gray-700">
-                {{ article.price }}
-              </span>
-              <span v-if="article.garantia" class="bg-gray-100 px-4 py-2 rounded-full text-sm font-medium text-gray-700">
-                Garantía: {{ article.garantia }}
-              </span>
+            <!-- Datos clave -->
+            <div class="grid grid-cols-2 gap-4 animate-fade-in-up stagger-4">
+              <div v-if="article.garantia" class="bg-white border border-gray-100 rounded-xl p-4">
+                <div class="text-xs text-gray-400 uppercase tracking-wider mb-1 font-body">Garantía</div>
+                <div class="font-display text-2xl text-gray-900">{{ article.garantia }}</div>
+              </div>
+              <div v-if="article.actualizaciones" class="bg-white border border-gray-100 rounded-xl p-4">
+                <div class="text-xs text-gray-400 uppercase tracking-wider mb-1 font-body">Actualizaciones</div>
+                <div class="font-body text-lg font-medium text-gray-900">{{ article.actualizaciones }}</div>
+              </div>
             </div>
 
-            <!-- CTAs de compra -->
-            <div v-if="article.donde_comprar && article.donde_comprar.length > 0" class="flex flex-wrap gap-3">
+            <!-- CTAs -->
+            <div v-if="primaryStore" class="flex flex-col sm:flex-row gap-3 animate-fade-in-up stagger-4">
               <a
-                v-for="tienda in article.donde_comprar"
-                :key="tienda.nombre"
+                :href="primaryStore.url"
+                target="_blank"
+                rel="noopener"
+                class="flex-1 bg-teal-600 hover:bg-teal-700 text-white font-body font-medium py-4 px-6 rounded-xl text-center transition-all hover:shadow-lg hover:shadow-teal-600/25 hover:-translate-y-0.5"
+              >
+                Ver en {{ primaryStore.nombre }}
+                <template v-if="primaryStore.precio"> · {{ primaryStore.precio }}</template>
+              </a>
+              <button
+                v-if="hasMultipleStores"
+                @click="showComparePrices = !showComparePrices"
+                class="flex-1 bg-white border-2 border-gray-200 hover:border-teal-600 text-gray-700 hover:text-teal-700 font-body font-medium py-4 px-6 rounded-xl transition-all"
+              >
+                {{ showComparePrices ? 'Ocultar precios' : 'Comparar precios' }}
+              </button>
+            </div>
+
+            <!-- Lista de tiendas expandible -->
+            <div v-if="showComparePrices && article.donde_comprar && article.donde_comprar.length > 1" class="space-y-3 animate-fade-in-up">
+              <a
+                v-for="(tienda, i) in article.donde_comprar.slice(1)"
+                :key="i"
                 :href="tienda.url"
                 target="_blank"
-                rel="noopener noreferrer"
-                class="inline-flex items-center gap-2 bg-secondary-500 hover:bg-secondary-600 text-white px-5 py-2.5 rounded-lg font-medium transition-colors"
+                rel="noopener"
+                class="flex items-center justify-between p-4 bg-stone-50 hover:bg-teal-50 border border-stone-200 hover:border-teal-200 rounded-xl transition-all group"
               >
-                <span>Comprar en {{ tienda.nombre }}</span>
-                <svg class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
-                </svg>
+                <span class="font-body font-medium text-gray-900 group-hover:text-teal-700">
+                  {{ tienda.nombre }}
+                </span>
+                <div class="flex items-center gap-3">
+                  <span v-if="tienda.precio" class="font-display text-lg text-gray-900">{{ tienda.precio }}</span>
+                  <svg class="w-5 h-5 text-gray-400 group-hover:text-teal-600 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </div>
               </a>
             </div>
           </div>
@@ -186,67 +234,111 @@ const placeholderIconColor = computed(() => {
       </div>
     </section>
 
-    <!-- Contenido principal -->
-    <article class="py-12">
-      <div class="container-narrow">
-        <!-- Pros/Cons -->
-        <div v-if="article.pros || article.cons" class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
-          <div v-if="article.pros" class="bg-green-50 rounded-lg p-6">
-            <h3 class="font-semibold text-green-800 mb-3 flex items-center gap-2">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-              </svg>
-              Ventajas
-            </h3>
-            <ul class="space-y-2">
-              <li v-for="pro in article.pros" :key="pro" class="text-green-700 text-sm flex items-start gap-2">
-                <span class="text-green-500 mt-1">•</span>
-                {{ pro }}
+    <!-- Pros y Contras -->
+    <section v-if="article.pros || article.cons" class="py-16 bg-stone-50">
+      <div class="max-w-6xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-8">
+
+          <!-- Pros -->
+          <div v-if="article.pros" class="bg-emerald-50 border border-emerald-100 rounded-2xl p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-emerald-500 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h2 class="font-display text-2xl text-emerald-900">Lo mejor</h2>
+            </div>
+            <ul class="space-y-4">
+              <li v-for="pro in article.pros" :key="pro" class="flex gap-3 font-body text-emerald-800">
+                <span class="text-emerald-500 mt-1 flex-shrink-0">✓</span>
+                <span>{{ pro }}</span>
               </li>
             </ul>
           </div>
-          <div v-if="article.cons" class="bg-red-50 rounded-lg p-6">
-            <h3 class="font-semibold text-red-800 mb-3 flex items-center gap-2">
-              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-              </svg>
-              Desventajas
-            </h3>
-            <ul class="space-y-2">
-              <li v-for="con in article.cons" :key="con" class="text-red-700 text-sm flex items-start gap-2">
-                <span class="text-red-500 mt-1">•</span>
-                {{ con }}
+
+          <!-- Contras -->
+          <div v-if="article.cons" class="bg-amber-50 border border-amber-100 rounded-2xl p-8">
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-10 h-10 bg-amber-500 rounded-xl flex items-center justify-center">
+                <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                </svg>
+              </div>
+              <h2 class="font-display text-2xl text-amber-900">A tener en cuenta</h2>
+            </div>
+            <ul class="space-y-4">
+              <li v-for="con in article.cons" :key="con" class="flex gap-3 font-body text-amber-800">
+                <span class="text-amber-500 mt-1 flex-shrink-0">→</span>
+                <span>{{ con }}</span>
               </li>
             </ul>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- Tabs con contenido -->
+    <!-- Contenido principal (tabs) -->
+    <article class="py-12 bg-white">
+      <div class="container-narrow">
         <div class="mb-12">
           <ProductTabs :color-scheme="colorScheme">
             <slot />
           </ProductTabs>
         </div>
-
-        <!-- Comparativa de coste -->
-        <div v-if="article.comparativa" class="mb-12">
-          <CostComparison
-            :comparativa="article.comparativa"
-            :product-name="article.title"
-            :product-price="article.price || ''"
-          />
-        </div>
-
-        <!-- Testimonios -->
-        <div v-if="article.testimonios && article.testimonios.length > 0" class="mb-12">
-          <Testimonials :testimonios="article.testimonios" />
-        </div>
-
-        <!-- Updated date -->
-        <div v-if="article.updatedAt" class="pt-6 border-t border-gray-200 text-sm text-gray-500">
-          Última actualización: {{ article.updatedAt }}
-        </div>
       </div>
     </article>
+
+    <!-- Comparativa de coste -->
+    <div v-if="article.comparativa">
+      <CostComparison
+        :comparativa="article.comparativa"
+        :product-name="article.title"
+        :product-price="article.price || ''"
+      />
+    </div>
+
+    <!-- Testimonios -->
+    <div v-if="article.testimonios && article.testimonios.length > 0">
+      <Testimonials :testimonios="article.testimonios" />
+    </div>
+
+    <!-- CTA final -->
+    <section v-if="primaryStore" class="py-16 bg-white border-t border-gray-100">
+      <div class="max-w-6xl mx-auto px-6 text-center">
+        <h2 class="font-display text-3xl text-gray-900 mb-4">
+          ¿Te convence?
+        </h2>
+        <p class="font-body text-gray-600 mb-8 max-w-xl mx-auto">
+          Si decides comprarlo, estarás apoyando un modelo de negocio que prioriza la longevidad sobre la obsolescencia.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a
+            :href="primaryStore.url"
+            target="_blank"
+            rel="noopener"
+            class="bg-teal-600 hover:bg-teal-700 text-white font-body font-medium py-4 px-8 rounded-xl transition-all hover:shadow-lg hover:shadow-teal-600/25 hover:-translate-y-0.5 inline-flex items-center justify-center gap-2"
+          >
+            Comprar {{ article.title }}
+            <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
+          </a>
+          <NuxtLink
+            :to="categoryPath"
+            class="bg-stone-100 hover:bg-stone-200 text-gray-700 font-body font-medium py-4 px-8 rounded-xl transition-all inline-flex items-center justify-center gap-2"
+          >
+            Ver alternativas
+          </NuxtLink>
+        </div>
+      </div>
+    </section>
+
+    <!-- Updated date -->
+    <div v-if="article.updatedAt" class="bg-stone-50 py-6">
+      <div class="container-narrow text-sm text-gray-500 text-center">
+        Última actualización: {{ article.updatedAt }}
+      </div>
+    </div>
   </div>
 </template>
