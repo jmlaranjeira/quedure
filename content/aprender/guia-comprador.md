@@ -1,10 +1,22 @@
 ---
 title: "Guía del comprador consciente: Cómo elegir productos que duran"
 description: "Aprende a evaluar la durabilidad, reparabilidad y sostenibilidad de cualquier producto antes de comprarlo."
+type: article
 category: aprender
 topic: guia-comprador
+author: "QueDure"
+tags:
+  - consumo-consciente
+  - guia-compra
+  - durabilidad
+  - reparabilidad
 readingTime: 8
 updatedAt: "2024-01-14"
+keyTakeaways:
+  - "El producto más sostenible es el que no compras"
+  - "Busca garantías de 5+ años como señal de durabilidad"
+  - "Verifica siempre el índice de reparabilidad (7+ es bueno)"
+  - "Un producto de calidad sale más barato a largo plazo"
 ---
 
 ## El problema del consumo actual

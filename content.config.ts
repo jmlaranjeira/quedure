@@ -101,11 +101,15 @@ export default defineContentConfig({
       schema: z.object({
         title: z.string(),
         description: z.string(),
+        type: z.enum(['article', 'product', 'tutorial']).default('article'),
         category: z.string().default('aprender'),
         topic: z.string().optional(),
+        author: z.string().optional(),
+        tags: z.array(z.string()).optional(),
         image: z.string().optional(),
         readingTime: z.number().optional(),
-        updatedAt: z.string().optional()
+        updatedAt: z.string().optional(),
+        keyTakeaways: z.array(z.string()).optional()
       })
     })
   }
