@@ -1,12 +1,12 @@
 ---
-title: "Fairphone 5"
+title: "Fairphone 6"
 description: "Fairphone ha redefinido lo que significa un smartphone ético. Con más de 40 componentes reemplazables sin herramientas especiales, materiales reciclados y de comercio justo, y un compromiso real con la longevidad del dispositivo."
 descripcion_corta: "El móvil más reparable del mercado"
 category: electronica
 subcategory: moviles
 brand: Fairphone
 origen: "Países Bajos"
-price: "699€"
+price: "599€"
 rating: 4
 reparabilidad: 10
 reparabilidadSource: "iFixit"
@@ -26,14 +26,14 @@ cons:
   - "Disponibilidad limitada en tiendas físicas"
 donde_comprar:
   - nombre: "Web oficial"
-    url: "https://shop.fairphone.com/fairphone-5"
-    precio: "699€"
+    url: "https://shop.fairphone.com/smartphones"
+    precio: "599€"
   - nombre: "Amazon"
     url: "https://www.amazon.es"
-    precio: "719€"
+    precio: "619€"
   - nombre: "PcComponentes"
     url: "https://www.pccomponentes.com"
-    precio: "699€"
+    precio: "599€"
 especificaciones:
   Pantalla: "6.46\" OLED 90Hz"
   Procesador: "Qualcomm QCM6490"
@@ -60,6 +60,6 @@ comparativa:
   alternativa_duracion: "2-3 años"
   alternativa_coste_10_anos: 1600
   producto_duracion: "8+ años"
-  producto_coste_10_anos: 850
+  producto_coste_10_anos: 750
 updatedAt: "2025-01-15"
 ---
