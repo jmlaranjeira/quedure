@@ -1,6 +1,6 @@
 ---
 title: "Fairphone 5"
-description: "Análisis completo del Fairphone 5, el smartphone modular diseñado para durar más de 10 años con soporte de software garantizado."
+description: "Fairphone ha redefinido lo que significa un smartphone ético. Con más de 40 componentes reemplazables sin herramientas especiales, materiales reciclados y de comercio justo, y un compromiso real con la longevidad del dispositivo."
 descripcion_corta: "El móvil más reparable del mercado"
 category: electronica
 subcategory: moviles
@@ -34,6 +34,19 @@ donde_comprar:
   - nombre: "PcComponentes"
     url: "https://www.pccomponentes.com"
     precio: "699€"
+especificaciones:
+  Pantalla: "6.46\" OLED 90Hz"
+  Procesador: "Qualcomm QCM6490"
+  RAM: "8GB"
+  Almacenamiento: "256GB (ampliable)"
+  Batería: "4200mAh (reemplazable)"
+  Cámara: "50MP dual"
+  Conectividad: "5G, WiFi 6, NFC"
+  Sistema: "Android 13 (actualizable)"
+alternativas:
+  - "Shiftphone 8"
+  - "Google Pixel (reacondicionado)"
+  - "iPhone (reacondicionado)"
 testimonios:
   - texto: "Lo tengo desde hace 2 años. Ya cambié la batería yo mismo en 5 minutos. Con mi antiguo iPhone hubiera tenido que pagar 80€ en una tienda."
     autor: "María L."
@@ -50,55 +63,3 @@ comparativa:
   producto_coste_10_anos: 850
 updatedAt: "2025-01-15"
 ---
-
-## Por qué elegimos el Fairphone 5
-
-El Fairphone 5 representa todo lo que debería ser un smartphone sostenible: **modular, reparable y con soporte a largo plazo**. Mientras otros fabricantes sellan sus dispositivos y limitan las actualizaciones a 2-3 años, Fairphone apuesta por la durabilidad real.
-
-## Diseño modular
-
-El teléfono está compuesto por **módulos independientes** que puedes reemplazar tú mismo:
-
-- Pantalla
-- Batería
-- Cámara trasera
-- Cámara frontal
-- Altavoz
-- Puerto USB-C
-
-Cada módulo se puede comprar por separado en la tienda oficial, con precios que van desde 29€ (altavoz) hasta 79€ (pantalla).
-
-## Especificaciones técnicas
-
-| Característica | Detalle |
-|---------------|---------|
-| Procesador | Qualcomm QCM6490 |
-| RAM | 8 GB |
-| Almacenamiento | 256 GB |
-| Pantalla | 6.46" OLED 90Hz |
-| Batería | 4200 mAh (extraíble) |
-| Cámara | 50 MP principal |
-
-## Sostenibilidad real
-
-Fairphone no solo habla de sostenibilidad, la practica:
-
-- **40% de materiales reciclados** en el dispositivo
-- Oro, estaño, tungsteno y plásticos de origen responsable
-- Fábrica con certificación de comercio justo
-- Programa de reciclaje para dispositivos antiguos
-
-## ¿Para quién es?
-
-El Fairphone 5 es ideal si:
-
-1. Quieres un móvil que dure más de 5 años
-2. Te importa poder repararlo tú mismo
-3. Valoras la transparencia en la cadena de suministro
-4. No necesitas la última cámara del mercado
-
-## Veredicto
-
-**El Fairphone 5 demuestra que la tecnología sostenible es posible**. No es el móvil más potente ni tiene la mejor cámara, pero es el único que puedes mantener funcionando una década sin depender del fabricante.
-
-Si tu prioridad es la durabilidad y la reparabilidad por encima del rendimiento puro, el Fairphone 5 es la mejor opción del mercado.

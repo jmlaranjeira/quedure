@@ -43,6 +43,8 @@ interface Props {
     donde_comprar?: DondeComprar[]
     testimonios?: Testimonio[]
     comparativa?: Comparativa
+    especificaciones?: Record<string, string>
+    alternativas?: string[]
     updatedAt?: string
   }
   categoryName: string
@@ -280,12 +282,15 @@ const hasMultipleStores = computed(() => {
 
     <!-- Contenido principal (tabs) -->
     <article class="py-12 bg-white">
-      <div class="container-narrow">
-        <div class="mb-12">
-          <ProductTabs :color-scheme="colorScheme">
-            <slot />
-          </ProductTabs>
-        </div>
+      <div class="max-w-6xl mx-auto px-6">
+        <ProductTabs
+          :description="article.description"
+          :especificaciones="article.especificaciones"
+          :donde-comprar="article.donde_comprar"
+          :alternativas="article.alternativas"
+          :product-name="article.title"
+          :category-path="categoryPath"
+        />
       </div>
     </article>
 

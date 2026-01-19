@@ -37,7 +37,9 @@ const productSchema = z.object({
     alternativa_coste_10_anos: z.number(),
     producto_duracion: z.string(),
     producto_coste_10_anos: z.number()
-  }).optional()
+  }).optional(),
+  especificaciones: z.record(z.string()).optional(),
+  alternativas: z.array(z.string()).optional()
 })
 
 export default defineContentConfig({
