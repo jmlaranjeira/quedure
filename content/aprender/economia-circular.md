@@ -11,7 +11,7 @@ tags:
   - derecho-reparar
   - sostenibilidad
 readingTime: 10
-updatedAt: "2025-01-19"
+updatedAt: "2026-01-19"
 keyTakeaways:
   - "La economía circular puede generar 1,8 billones de euros anuales en Europa"
   - "Philips, IKEA e Interface ya demuestran que el modelo funciona"

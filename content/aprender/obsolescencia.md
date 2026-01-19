@@ -11,7 +11,7 @@ tags:
   - historia
   - derecho-reparar
 readingTime: 12
-updatedAt: "2025-01-19"
+updatedAt: "2026-01-19"
 keyTakeaways:
   - "La obsolescencia programada nació en 1924 con el Cártel Phoebus"
   - "Una bombilla de 1901 sigue encendida: la durabilidad es posible"

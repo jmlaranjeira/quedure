@@ -20,7 +20,7 @@ cons:
   - "Algunos componentes plásticos"
   - "Programa ECO muy largo (4 horas)"
   - "Garantía general de solo 2 años"
-updatedAt: "2025-01-19"
+updatedAt: "2026-01-19"
 ---
 
 ## Una alternativa reparable sin arruinarse

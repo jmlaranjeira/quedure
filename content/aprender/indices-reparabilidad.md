@@ -11,7 +11,7 @@ tags:
   - ifixit
   - derecho-reparar
 readingTime: 12
-updatedAt: "2025-01-19"
+updatedAt: "2026-01-19"
 keyTakeaways:
   - "iFixit evalúa electrónica popular con desmontaje real"
   - "El índice francés es obligatorio por ley desde 2021"

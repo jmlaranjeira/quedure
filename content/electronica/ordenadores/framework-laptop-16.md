@@ -54,5 +54,5 @@ comparativa:
   alternativa_coste_10_anos: 3000
   producto_duracion: "10+ años"
   producto_coste_10_anos: 2200
-updatedAt: "2025-01-19"
+updatedAt: "2026-01-19"
 ---
