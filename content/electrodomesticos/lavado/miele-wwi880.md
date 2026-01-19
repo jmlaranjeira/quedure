@@ -56,9 +56,9 @@ testimonios:
     fuente: "Trustpilot"
 comparativa:
   alternativa_nombre: "Lavadora convencional"
-  alternativa_precio: 500
-  alternativa_duracion: "7-8 años"
-  alternativa_coste_10_anos: 1250
+  alternativa_precio: 550
+  alternativa_duracion: "5-6 años"
+  alternativa_coste_10_anos: 2200
   producto_duracion: "20 años"
   producto_coste_10_anos: 1899
 updatedAt: "2025-01-19"
