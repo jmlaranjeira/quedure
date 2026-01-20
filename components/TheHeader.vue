@@ -11,7 +11,8 @@ const categories = [
 ]
 
 const navigation = [
-  { name: 'Reparar', href: '/reparar' }
+  { name: 'Reparar', href: '/reparar' },
+  { name: 'Lecturas', href: '/lecturas' }
 ]
 
 const toggleMenu = () => {
