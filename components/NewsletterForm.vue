@@ -8,7 +8,7 @@ const handleSubmit = async () => {
 
 <template>
   <div class="w-full max-w-md mx-auto">
-    <!-- Mensaje de exito -->
+    <!-- Mensaje de éxito -->
     <Transition
       enter-active-class="transition duration-300 ease-out"
       enter-from-class="opacity-0 scale-95"
@@ -25,7 +25,7 @@ const handleSubmit = async () => {
           <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
         </svg>
         <h3 class="text-lg font-semibold text-gray-900 mb-1">
-          Suscripcion confirmada
+          Suscripción confirmada
         </h3>
         <p class="text-gray-600 text-sm">
           Revisa tu bandeja de entrada para confirmar tu email.
@@ -79,9 +79,9 @@ const handleSubmit = async () => {
           :disabled="state.isLoading"
         />
         <label for="newsletter-consent" class="text-sm text-gray-600 leading-tight">
-          Acepto recibir comunicaciones y he leido la
+          Acepto recibir comunicaciones y he leído la
           <NuxtLink to="/privacidad" class="text-teal-600 hover:text-teal-700 underline">
-            politica de privacidad
+            política de privacidad
           </NuxtLink>
         </label>
       </div>
@@ -104,7 +104,7 @@ const handleSubmit = async () => {
         </p>
       </Transition>
 
-      <!-- Boton submit -->
+      <!-- Botón submit -->
       <button
         type="submit"
         :disabled="!canSubmit"

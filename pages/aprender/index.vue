@@ -145,30 +145,39 @@ const steps = [
       </div>
     </section>
 
-    <!-- Newsletter CTA -->
-    <section class="py-12 bg-gray-100">
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gradient-to-br from-teal-600 to-teal-700">
       <div class="container-narrow">
-        <div class="bg-primary-50 rounded-2xl p-8 text-center">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">
-            Mantente informado
-          </h2>
-          <p class="text-gray-600 mb-6 max-w-md mx-auto">
-            Recibe consejos de consumo consciente, alertas de productos problemáticos
-            y las últimas guías directamente en tu correo.
-          </p>
-          <form class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="tu@email.com"
-              class="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-            />
-            <button type="submit" class="btn-primary whitespace-nowrap">
-              Suscribirme
-            </button>
-          </form>
-          <p class="text-xs text-gray-500 mt-3">
-            Sin spam. Puedes darte de baja cuando quieras.
-          </p>
+        <div class="grid md:grid-cols-2 gap-10 items-center">
+          <!-- Texto -->
+          <div class="text-white">
+            <h2 class="text-3xl font-bold mb-4">
+              Mantente informado
+            </h2>
+            <p class="text-teal-100 text-lg mb-6">
+              Recibe consejos de consumo consciente, alertas de productos problemáticos
+              y las últimas guías directamente en tu correo.
+            </p>
+            <ul class="space-y-3 text-teal-50">
+              <li class="flex items-center gap-3">
+                <img src="/icons/check-orange.svg" alt="" class="w-5 h-5 flex-shrink-0" />
+                Guías de productos duraderos
+              </li>
+              <li class="flex items-center gap-3">
+                <img src="/icons/check-orange.svg" alt="" class="w-5 h-5 flex-shrink-0" />
+                Alertas de obsolescencia programada
+              </li>
+              <li class="flex items-center gap-3">
+                <img src="/icons/check-orange.svg" alt="" class="w-5 h-5 flex-shrink-0" />
+                Tutoriales de reparación
+              </li>
+            </ul>
+          </div>
+
+          <!-- Formulario -->
+          <div class="bg-white rounded-2xl p-6 shadow-xl">
+            <NewsletterForm />
+          </div>
         </div>
       </div>
     </section>
