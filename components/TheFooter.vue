@@ -16,7 +16,8 @@ const sections = [
     links: [
       { name: 'Reparar', href: '/reparar' },
       { name: 'Talleres', href: '/reparar/talleres' },
-      { name: 'Aprender', href: '/aprender' }
+      { name: 'Aprender', href: '/aprender' },
+      { name: 'Newsletter', href: '/newsletter' }
     ]
   }
 ]
