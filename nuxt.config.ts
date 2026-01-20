@@ -3,6 +3,12 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
 
+  // Runtime config - variables de entorno
+  runtimeConfig: {
+    // Solo disponible en el servidor
+    hostingerApiToken: ''
+  },
+
   modules: [
     '@nuxt/content',
     '@nuxtjs/tailwindcss',
