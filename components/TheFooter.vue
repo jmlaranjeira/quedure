@@ -96,7 +96,10 @@ const socialLinks = [
       <!-- Bottom -->
       <div class="mt-8 pt-8 border-t border-gray-700">
         <p class="text-sm text-gray-400 text-center">
-          &copy; {{ currentYear }} QueDure.es - Hecho con cuidado para un consumo consciente
+          &copy; {{ currentYear }} QueDure.es ·
+          <NuxtLink to="/privacidad" class="hover:text-white transition-colors">
+            Política de Privacidad
+          </NuxtLink>
         </p>
       </div>
     </div>
