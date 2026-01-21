@@ -145,6 +145,36 @@ npm run preview  # Preview del build
 npm run generate # Generar sitio estático
 ```
 
+## Variables de entorno
+
+El proyecto requiere configurar las siguientes variables de entorno:
+
+| Variable | Requerida | Descripción |
+|----------|-----------|-------------|
+| `NUXT_HOSTINGER_API_TOKEN` | Sí | Token de la API de Hostinger Reach para el formulario de suscripción |
+
+### Configuración local
+
+1. Copia el archivo de ejemplo:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. Edita `.env` con tus valores:
+   ```bash
+   NUXT_HOSTINGER_API_TOKEN=tu_token_aqui
+   ```
+
+3. Obtén tu token en: https://hpanel.hostinger.com/api-tokens
+
+### Configuración en producción
+
+**Importante:** Nunca subas el archivo `.env` al repositorio. Usa las variables de entorno de tu plataforma:
+
+- **Railway/Render**: Panel de Variables de entorno
+- **Vercel**: Settings > Environment Variables
+- **Netlify**: Site settings > Environment variables
+
 ## Despliegue
 
 El proyecto está configurado para desplegar en Node.js (Railway, Render, etc.):
