@@ -57,7 +57,10 @@ const props = withDefaults(defineProps<Props>(), {
 })
 
 const imageLoaded = ref(false)
+const imageError = ref(false)
 const showComparePrices = ref(false)
+
+const showImage = computed(() => props.article.image && !imageError.value)
 
 onMounted(() => {
   // Trigger animations after mount
@@ -97,10 +100,10 @@ const hasMultipleStores = computed(() => {
     <!-- Hero Section -->
     <section class="bg-white">
       <div class="max-w-6xl mx-auto px-6 py-12">
-        <div :class="article.image ? 'grid lg:grid-cols-2 gap-12 lg:gap-16 items-start' : 'max-w-2xl'">
+        <div :class="showImage ? 'grid lg:grid-cols-2 gap-12 lg:gap-16 items-start' : 'max-w-2xl'">
 
           <!-- Imagen -->
-          <div v-if="article.image" class="relative animate-scale-in">
+          <div v-if="showImage" class="relative animate-scale-in">
             <div class="aspect-[4/5] rounded-3xl overflow-hidden bg-gradient-to-br from-stone-100 to-stone-200 shadow-2xl shadow-stone-200/50">
               <NuxtImg
                 :src="article.image"
@@ -113,6 +116,7 @@ const hasMultipleStores = computed(() => {
                 class="w-full h-full object-cover transition-opacity duration-700"
                 :class="imageLoaded ? 'opacity-100' : 'opacity-0'"
                 @load="imageLoaded = true"
+                @error="imageError = true"
               />
             </div>
 

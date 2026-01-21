@@ -26,13 +26,10 @@ cons:
   - "Disponibilidad limitada en tiendas físicas"
 donde_comprar:
   - nombre: "Web oficial"
-    url: "https://shop.fairphone.com/smartphones"
+    url: "https://shop.fairphone.com/the-fairphone-gen-6"
     precio: "599€"
-  - nombre: "Amazon"
-    url: "https://www.amazon.es"
-    precio: "619€"
   - nombre: "PcComponentes"
-    url: "https://www.pccomponentes.com"
+    url: "https://www.pccomponentes.com/fairphone-6-8gb-256gb-631-poled-5g-dual-sim-camara-50mp-ip55-android-15-blanco"
     precio: "599€"
 especificaciones:
   Pantalla: "6.46\" OLED 90Hz"

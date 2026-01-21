@@ -29,10 +29,10 @@ donde_comprar:
     url: "https://www.miele.es/product/12537140/lavadora-de-carga-frontal-w1-wwi880-wcs-pwashytdosysteam-blanco-loto"
     precio: "1.899€"
   - nombre: "El Corte Inglés"
-    url: "https://www.elcorteingles.es"
+    url: "https://www.elcorteingles.es/electrodomesticos/A50424980-lavadoras-miele-9-kg-1600-rpm-steamcare-twindos-y-powerwash-wwi880-wcs-125/"
     precio: "1.899€"
   - nombre: "MediaMarkt"
-    url: "https://www.mediamarkt.es"
+    url: "https://www.mediamarkt.es/es/product/_lavadora-carga-frontal-miele-wwi880-wcs-125-gala-edition-9-kg-1600-rpm-25-programas-wifi-blanco-1569281.html"
     precio: "1.899€"
 especificaciones:
   Capacidad: "9 kg"
